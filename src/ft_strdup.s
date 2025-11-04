@@ -34,7 +34,9 @@ ft_strdup:
     ; call malloc and null check
     mov rdi, rax
     push rax ; save len
+    sub rsp, 8
     call malloc wrt ..plt
+    add rsp, 8
     test rax, rax
     je .exit_error
 
